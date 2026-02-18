@@ -61,7 +61,7 @@ export function Contact() {
                 </div>
                 <div>
                   <div className="text-sm text-slate-500">Email</div>
-                  <div>your.email@example.com</div>
+                  <div>perez.marco1112@gmail.com</div>
                 </div>
               </motion.div>
               
@@ -74,7 +74,7 @@ export function Contact() {
                 </div>
                 <div>
                   <div className="text-sm text-slate-500">Location</div>
-                  <div>San Francisco, CA</div>
+                  <div>Orange County, CA</div>
                 </div>
               </motion.div>
             </div>

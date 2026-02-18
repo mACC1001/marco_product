@@ -4,10 +4,10 @@ import { ProjectCard } from './ProjectCard';
 
 const projects = [
   {
-    title: 'Mobile Banking App Redesign',
-    description: 'Led cross-functional team to redesign mobile banking experience, resulting in 40% increase in user engagement and 25% reduction in support tickets.',
-    tags: ['User Research', 'A/B Testing', 'Agile', 'Fintech'],
-    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80',
+    title: 'Healthcare Analytics Dashboard',
+    description: 'Designed and managed an analytics dashboard for mental wellness programs, enabling administrators to track enrollment pipelines, service utilization, provider visits, and insurance claims across multiple school sites.',
+    tags: ['Healthcare', 'Data Visualization', 'Dashboard Design', 'Analytics'],
+    image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80',
     github: 'https://github.com',
     demo: 'https://example.com'
   },
@@ -20,10 +20,10 @@ const projects = [
     demo: 'https://example.com'
   },
   {
-    title: 'AI-Powered Recommendation Engine',
-    description: 'Drove development of ML-based product recommendations, increasing conversion rate by 35% and average order value by 28%.',
-    tags: ['Data Analytics', 'Machine Learning', 'Metrics', 'Personalization'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+    title: 'HIPAA Consent Integration',
+    description: 'Led end-to-end initiative to capture third-party HIPAA consent during patient registration, building integrations to sync consent status and digitally signed PDFs, updating the registration flow, and extending the experience to Android devices. Delivered as a solo PM leveraging Claude Code.',
+    tags: ['HIPAA Compliance', 'Integrations', 'Patient Registration', 'Claude Code'],
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
     github: 'https://github.com',
     demo: 'https://example.com'
   },

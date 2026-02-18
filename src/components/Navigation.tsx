@@ -59,7 +59,7 @@ export function Navigation() {
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1 }}
-                href="mailto:your.email@example.com"
+                href="mailto:perez.marco1112@gmail.com"
                 className="text-slate-400 hover:text-white transition-colors"
               >
                 <Mail size={20} />
@@ -125,7 +125,7 @@ export function Navigation() {
               <Linkedin size={20} />
             </a>
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:perez.marco1112@gmail.com"
               className="text-slate-400 hover:text-white transition-colors"
             >
               <Mail size={20} />
