@@ -156,7 +156,7 @@ export function Contact() {
         className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 pt-8 border-t border-slate-800"
       >
         <div className="text-center text-slate-500">
-          <p>&copy; 2025 Your Name. All rights reserved.</p>
+          <p>&copy; 2026 Marco Perez. All rights reserved.</p>
         </div>
       </motion.footer>
     </section>
