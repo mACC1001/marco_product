@@ -41,7 +41,7 @@ export function Navigation() {
             <div className="flex gap-3 ml-4">
               <motion.a 
                 whileHover={{ scale: 1.1 }}
-                href="https://github.com" 
+                href="https://github.com/mACC1001" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-white transition-colors"
@@ -50,7 +50,7 @@ export function Navigation() {
               </motion.a>
               <motion.a 
                 whileHover={{ scale: 1.1 }}
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/marco-perez-product/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-white transition-colors"
@@ -109,7 +109,7 @@ export function Navigation() {
           
           <div className="flex gap-4 pt-4 border-t border-slate-800">
             <a 
-              href="https://github.com" 
+              href="https://github.com/mACC1001" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-slate-400 hover:text-white transition-colors"
@@ -117,7 +117,7 @@ export function Navigation() {
               <Github size={20} />
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/marco-perez-product/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-slate-400 hover:text-white transition-colors"
