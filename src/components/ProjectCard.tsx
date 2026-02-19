@@ -1,14 +1,7 @@
 import { motion } from 'motion/react';
-import { ExternalLink } from 'lucide-react';
-
-interface Project {
-  title: string;
-  description: string;
-  tags: string[];
-  image: string;
-  github: string;
-  demo: string;
-}
+import { ArrowRight, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import type { Project } from '../data/projects';
 
 interface ProjectCardProps {
   project: Project;
@@ -48,16 +41,28 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
 
         <div className="flex gap-4">
-          <motion.a
-            href={project.demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors"
-          >
-            <ExternalLink size={20} />
-            Case Study
-          </motion.a>
+          {project.caseStudy ? (
+            <Link to={`/projects/${project.slug}`}>
+              <motion.span
+                whileHover={{ scale: 1.05 }}
+                className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors"
+              >
+                <ArrowRight size={20} />
+                Case Study
+              </motion.span>
+            </Link>
+          ) : (
+            <motion.a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors"
+            >
+              <ExternalLink size={20} />
+              Case Study
+            </motion.a>
+          )}
         </div>
       </div>
 
