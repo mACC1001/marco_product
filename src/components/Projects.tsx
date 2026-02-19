@@ -11,8 +11,8 @@ const projects = [
     demo: 'https://example.com'
   },
   {
-    title: 'SaaS Platform 0-to-1 Launch',
-    description: 'Defined product vision and roadmap for new B2B SaaS platform. Achieved product-market fit with 100+ enterprise customers in first year.',
+    title: 'Legacy System Overhaul',
+    description: 'Led the consolidation of multiple legacy tools into a unified SaaS platform in under 5 months, streamlining operations and reducing client spend by 50%.',
     tags: ['Product Strategy', 'MVP', 'B2B SaaS', 'Go-to-Market'],
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
     github: 'https://github.com',
@@ -27,10 +27,10 @@ const projects = [
     demo: 'https://example.com'
   },
   {
-    title: 'Healthcare Patient Portal',
-    description: 'Launched patient-facing portal improving appointment scheduling efficiency by 60% and patient satisfaction scores by 45%.',
-    tags: ['Healthcare', 'User Experience', 'Stakeholder Mgmt', 'Compliance'],
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80',
+    title: 'Product Manager Portfolio',
+    description: 'Designed and built a personal portfolio website from scratch using React, Tailwind CSS, and Claude Code to showcase product management experience and case studies.',
+    tags: ['Personal Branding', 'Side Project', 'Claude Code', 'Web Development'],
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80',
     github: 'https://github.com',
     demo: 'https://example.com'
   }
