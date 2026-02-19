@@ -19,7 +19,7 @@ const skillCategories = [
   {
     icon: LineChart,
     title: 'Data & Analytics',
-    skills: ['SQL', 'Product Metrics', 'A/B Testing', 'Data Analysis', 'Mixpanel/Amplitude'],
+    skills: ['SQL', 'ETL/Data Pipelines', 'Postman', 'Graylog', 'DBeaver'],
     bgColor: 'bg-cyan-500/10',
     textColor: 'text-cyan-400',
   },
