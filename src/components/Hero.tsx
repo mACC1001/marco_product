@@ -7,6 +7,17 @@ export function Hero() {
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-violet-600/20 via-slate-950 to-blue-600/20" />
 
+      {/* Dot grid texture */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: 'radial-gradient(circle, rgba(148,163,184,0.15) 1px, transparent 1px)',
+          backgroundSize: '28px 28px',
+          maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 80%)',
+          WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 80%)',
+        }}
+      />
+
       {/* Animated gradient orbs */}
       <motion.div
         animate={{
@@ -41,7 +52,7 @@ export function Hero() {
           transition={{ duration: 0.8 }}
         >
           <motion.h1
-            className="text-white mb-6"
+            className="text-4xl md:text-6xl lg:text-7xl text-white mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
