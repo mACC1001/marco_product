@@ -60,7 +60,7 @@ export const projects: Project[] = [
     slug: 'legacy-system-overhaul',
     caseStudy: {
       overview: 'I led the product strategy to consolidate multiple disconnected legacy tools into a single unified SaaS platform for a B2B healthcare services company. The project was delivered in under 5 months, reducing client operational costs by 50% and positioning the company for scalable growth.',
-      problem: 'The organization had accumulated multiple separate tools over the years — scheduling, documentation, billing, reporting, and communication — each from different vendors with no integration. Staff toggled between systems constantly, data was duplicated or inconsistent, and clients were paying licensing fees for overlapping functionality. New client onboarding took 3-4 weeks due to the complexity of provisioning across all systems.',
+      problem: 'The organization had accumulated multiple separate tools over the years for scheduling, documentation, billing, reporting, and communication, each from a different vendor with no integration. Staff toggled between systems constantly, data was duplicated or inconsistent, and clients were paying licensing fees for overlapping functionality.',
       approach: [
         'Audited all legacy tools to map feature usage, identifying that only 40% of features across all tools were actively used.',
         'Conducted workflow mapping sessions with operations staff to understand cross-system dependencies and pain points.',
