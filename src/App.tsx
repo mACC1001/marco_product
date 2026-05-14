@@ -1,4 +1,6 @@
-import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import ReactGA from 'react-ga4';
 import { Hero } from './components/Hero';
 import { Projects } from './components/Projects';
 import { Skills } from './components/Skills';
@@ -22,6 +24,12 @@ function HomePage() {
 }
 
 export default function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    ReactGA.send({ hitType: 'pageview', page: location.pathname + location.search });
+  }, [location]);
+
   return (
     <div className="min-h-screen bg-slate-950">
       <Routes>
