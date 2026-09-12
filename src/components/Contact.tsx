@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Mail, MapPin, Send } from 'lucide-react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -9,9 +9,14 @@ export function Contact() {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const submissionLocked = useRef(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (submissionLocked.current) return;
+    submissionLocked.current = true;
+    setIsSubmitting(true);
     const body = new URLSearchParams({
       'form-name': 'contact',
       ...formData
@@ -21,11 +26,18 @@ export function Contact() {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: body.toString()
     })
-      .then(() => {
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Contact submission failed: ${response.status}`);
+        }
         setSubmitted(true);
         setFormData({ name: '', email: '', message: '' });
       })
-      .catch(() => alert('Something went wrong. Please try again.'));
+      .catch(() => {
+        submissionLocked.current = false;
+        alert('Something went wrong. Please try again.');
+      })
+      .finally(() => setIsSubmitting(false));
   };
 
   return (
@@ -175,11 +187,13 @@ export function Contact() {
 
               <motion.button
                 type="submit"
+                disabled={isSubmitting}
+                aria-busy={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full px-8 py-3 bg-white text-slate-950 rounded-lg inline-flex items-center justify-center gap-2 hover:bg-slate-100 transition-colors"
+                className="w-full px-8 py-3 bg-white text-slate-950 rounded-lg inline-flex items-center justify-center gap-2 hover:bg-slate-100 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send Message
+                {isSubmitting ? 'Sending…' : 'Send Message'}
                 <Send size={20} />
               </motion.button>
             </motion.form>
