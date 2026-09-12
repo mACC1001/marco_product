@@ -7,6 +7,7 @@ import { Skills } from './components/Skills';
 import { Contact } from './components/Contact';
 import { Navigation } from './components/Navigation';
 import { CaseStudy } from './pages/CaseStudy';
+import { NotFound } from './pages/NotFound';
 import { useScrollToHash } from './hooks/useScrollToHash';
 
 function HomePage() {
@@ -35,6 +36,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/projects/:slug" element={<CaseStudy />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
