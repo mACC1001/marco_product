@@ -18,32 +18,13 @@ export function Hero() {
         }}
       />
 
-      {/* Animated gradient orbs */}
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-        className="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-500/30 rounded-full blur-3xl"
-      />
-      <motion.div
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1
-        }}
-        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl"
-      />
+      {/* Soft, overlapping lava shapes stay behind the content. */}
+      <div className="hero-lava" aria-hidden="true">
+        <div className="hero-lava-blob hero-lava-violet" />
+        <div className="hero-lava-blob hero-lava-blue" />
+        <div className="hero-lava-blob hero-lava-indigo" />
+        <div className="hero-lava-shade" />
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-16">
         <motion.div

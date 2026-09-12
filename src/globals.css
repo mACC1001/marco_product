@@ -191,3 +191,70 @@
 html {
   font-size: var(--font-size);
 }
+
+.hero-lava {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-lava-blob {
+  position: absolute;
+  width: clamp(20rem, 48vw, 50rem);
+  aspect-ratio: 1;
+  border-radius: 42% 58% 65% 35% / 48% 38% 62% 52%;
+  filter: blur(36px);
+  will-change: transform;
+  animation: hero-lava-flow 12s ease-in-out infinite;
+}
+
+.hero-lava-violet {
+  top: -15%;
+  left: -8%;
+  background: radial-gradient(ellipse, rgb(124 58 237 / 48%), rgb(109 40 217 / 12%) 60%, transparent 75%);
+}
+
+.hero-lava-blue {
+  right: -10%;
+  bottom: -20%;
+  background: radial-gradient(ellipse, rgb(37 99 235 / 44%), rgb(29 78 216 / 12%) 60%, transparent 75%);
+  animation-duration: 15s;
+  animation-delay: -6s;
+  animation-direction: reverse;
+}
+
+.hero-lava-indigo {
+  top: 20%;
+  left: 30%;
+  width: clamp(18rem, 38vw, 40rem);
+  background: radial-gradient(ellipse, rgb(99 102 241 / 30%), rgb(79 70 229 / 10%) 60%, transparent 75%);
+  animation-duration: 17s;
+  animation-delay: -10s;
+}
+
+.hero-lava-shade {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgb(2 6 23 / 25%), transparent 70%),
+    linear-gradient(to bottom, transparent 75%, #020617);
+}
+
+@keyframes hero-lava-flow {
+  0%, 100% {
+    transform: translate3d(-12%, -8%, 0) rotate(-20deg) scale(0.9, 1.15);
+  }
+  33% {
+    transform: translate3d(48%, 32%, 0) rotate(65deg) scale(1.3, 0.8);
+  }
+  66% {
+    transform: translate3d(4%, 65%, 0) rotate(-45deg) scale(0.8, 1.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-lava-blob {
+    animation: none;
+    will-change: auto;
+  }
+}
