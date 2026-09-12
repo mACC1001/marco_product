@@ -99,44 +99,36 @@ export function CaseStudy() {
           </p>
         </CaseStudyBlock>
 
-        <CaseStudyBlock title="The Problem" delay={0.1}>
+        <CaseStudyBlock title={caseStudy.delivered ? 'Problem & decisions' : 'The Problem'} delay={0.1}>
           <p className="text-slate-300 text-lg leading-relaxed">
             {caseStudy.problem}
           </p>
+          {caseStudy.delivered && (
+            <div className="mt-6">
+              <CaseStudyList items={caseStudy.approach} />
+            </div>
+          )}
         </CaseStudyBlock>
 
-        <CaseStudyBlock title="Approach" delay={0.2}>
-          <ul className="space-y-3">
-            {caseStudy.approach.map((item, i) => (
-              <li key={i} className="flex items-start gap-3 text-slate-300">
-                <div className="w-2 h-2 rounded-full bg-violet-400 mt-2 shrink-0" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+        <CaseStudyBlock title={caseStudy.delivered ? 'What we delivered' : 'Approach'} delay={0.2}>
+          <CaseStudyList items={caseStudy.delivered ?? caseStudy.approach} />
         </CaseStudyBlock>
 
-        <CaseStudyBlock title="Results" delay={0.3}>
-          <ul className="space-y-3">
-            {caseStudy.results.map((item, i) => (
-              <li key={i} className="flex items-start gap-3 text-slate-300">
-                <div className="w-2 h-2 rounded-full bg-blue-400 mt-2 shrink-0" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+        <CaseStudyBlock title={caseStudy.delivered ? 'Results & reflection' : 'Results'} delay={0.3}>
+          <CaseStudyList items={caseStudy.results} />
+          {caseStudy.delivered && (
+            <div className="mt-8 border-t border-slate-800 pt-6">
+              <h3 className="text-white text-xl font-medium mb-4">What I’d do differently</h3>
+              <CaseStudyList items={caseStudy.learnings} />
+            </div>
+          )}
         </CaseStudyBlock>
 
-        <CaseStudyBlock title="Key Learnings" delay={0.4}>
-          <ul className="space-y-3">
-            {caseStudy.learnings.map((item, i) => (
-              <li key={i} className="flex items-start gap-3 text-slate-300">
-                <div className="w-2 h-2 rounded-full bg-cyan-400 mt-2 shrink-0" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </CaseStudyBlock>
+        {!caseStudy.delivered && (
+          <CaseStudyBlock title="Key Learnings" delay={0.4}>
+            <CaseStudyList items={caseStudy.learnings} />
+          </CaseStudyBlock>
+        )}
 
         {/* Bottom navigation */}
         <motion.div
@@ -176,5 +168,18 @@ function CaseStudyBlock({
       <h2 className="text-white text-2xl font-medium mb-6">{title}</h2>
       {children}
     </motion.div>
+  );
+}
+
+function CaseStudyList({ items }: { items: string[] }) {
+  return (
+    <ul className="space-y-4">
+      {items.map((item, index) => (
+        <li key={index} className="flex items-start gap-3 text-slate-300 leading-relaxed">
+          <div aria-hidden="true" className="w-2 h-2 rounded-full bg-violet-400 mt-2 shrink-0" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
   );
 }

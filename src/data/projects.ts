@@ -2,6 +2,7 @@ export interface CaseStudySection {
   overview: string;
   problem: string;
   approach: string[];
+  delivered?: string[];
   results: string[];
   learnings: string[];
 }
@@ -27,26 +28,25 @@ export const projects: Project[] = [
     demo: 'https://example.com',
     slug: 'healthcare-analytics',
     caseStudy: {
-      overview: 'As the product manager at a technical development firm, I partnered with a behavioral health organization to design and build a program monitoring dashboard for their school district clients. The dashboard gave school administrators real-time visibility into the health of their behavioral health programs, tracking key metrics including program enrollment, number of delivered services, claims filed, and total billed versus paid amounts.',
-      problem: 'Program administrators were relying on disconnected spreadsheets and manual reports to track student enrollment, provider visits, and insurance billing across dozens of school sites. Data was often weeks old by the time it reached decision-makers, leading to underutilized provider capacity, missed billing opportunities, and an inability to demonstrate program impact to district partners.',
+      overview: 'School administrators needed a consolidated view of their behavioral health programs—from student enrollment and delivered services to claims and payments. As part of a broader platform project, I led the product work for a monitoring dashboard that brought these metrics together across school sites.',
+      problem: 'School administrators needed to understand how their behavioral health programs were performing and how service participation related to student outcomes. Previously, paper-based documentation left key metrics uncaptured, making that evaluation difficult. They needed visibility into enrollment, service delivery, and billing alongside attendance, behavior incidents, and academic performance to assess program effectiveness and inform decisions.',
       approach: [
-        'Conducted discovery interviews with 8 program administrators and 5 district partners to map their reporting workflows and identify the highest-value metrics.',
-        'Defined a phased MVP scope focused on four key dashboards: enrollment pipeline, service utilization, provider visits, and claims tracking.',
-        'Integrated with each district\'s Student Information System (SIS) to onboard students, and built a provider experience where clinicians could log delivered services, write SOAP notes, and upload documentation, creating the unified data source for the analytics dashboard.',
+        'Defined the initial dashboard metrics using providers’ existing paper documentation, then refined them through prototype reviews with school administrators. For example, administrators wanted to look beyond total services delivered and understand which providers at each school were completing the most services. That feedback led us to add a provider-level breakdown, making service activity easier to compare.',
         'Created wireframes and interactive prototypes in Figma, iterating through 3 rounds of feedback with end users.',
-        'Worked with engineering to implement role-based access controls so each school site could see only their own data.',
+      ],
+      delivered: [
+        'Used service documentation, completion, and claims submission data already captured in the platform’s provider tenant to power the dashboard. I helped develop the SQL queries behind the metrics and designed the dashboard UI using Highcharts for data visualization, turning operational data into views administrators could use to evaluate their programs.',
+        'Brought together enrollment, service delivery, billing, and academic metrics, with provider-level service breakdowns and visibility into outstanding student visits.',
       ],
       results: [
-        'Reduced time-to-insight from 2-3 weeks to real-time for enrollment and utilization data.',
-        'Automated claims submission via an Availity integration, submitting $5K in claims within the first week of launch.',
-        'Enabled administrators to proactively reallocate provider capacity, improving utilization rates by 18%.',
-        'Enabled real-time tracking of provider adoption by surfacing which clinicians had completed encounters with students across all school sites.',
+        'Provider resourcing: Helped administrators identify associate providers who may need more support and decide where to invest resources to support existing staff.',
+        'Enrollment visibility: Helped administrators monitor participation in the program.',
+        'Claims visibility: Made automated claims activity visible as providers completed documentation.',
+        'Made documentation backlogs visible: Showed administrators which student visits had not been submitted and the providers responsible, helping them identify outstanding work. Claims remained on hold while incomplete documentation stayed on each provider’s to-do list.',
       ],
       learnings: [
-        'Starting with the decision the user needs to make (rather than the data available) led to a much more focused and useful dashboard.',
-        'Role-based access control was essential given the range of provider roles, from certified to associate social workers, and the need to meet both HIPAA and FERPA requirements across all school sites.',
-        'Iterating on prototypes with real administrators caught usability issues that would have been costly to fix post-launch.',
-        'Building the Availity integration required structuring encounter data in X12 EDI format, a compliance requirement that shaped how we designed service documentation in the provider experience.',
+        'Define reporting needs earlier: I would pay closer attention to the data captured in the provider experience and how it supports the dashboard’s metrics. Validating those needs alongside low-fidelity designs would help identify data gaps before investing in polished charts.',
+        'Align on terminology early: Define and agree on metric names and labels early, then use them consistently throughout the dashboard to create a shared understanding across schools and school districts.',
       ],
     },
   },
